@@ -71,7 +71,7 @@ TOOL_DISPLAY = "{{cookiecutter.display_name}}"
 # all scenarios.
 TOOL_ARGS = []  # default arguments always passed to your tool.
 
-{% if cookiecutter.delte_formatting_codes %}
+{% if cookiecutter.delete_linting_codes %}
 {% else %}
 # TODO: If your tool is a linter then update this section.
 # Delete "Linting features" section if your tool is NOT a linter.
