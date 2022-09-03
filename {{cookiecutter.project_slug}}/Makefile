@@ -1,10 +1,10 @@
 init:
 	py -3.7 -m venv .venv
-	".venv/scripts/activate"
-	pip install -U nox
+	echo -e "\u001b[93mPlease activate venv.\u001b[0m"
 
 setup:
-	nox -session setup
+	pip install -U nox
+	nox --session setup
 	npm install
 
 setup-test:
