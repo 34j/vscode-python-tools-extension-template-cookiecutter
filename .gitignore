@@ -4,6 +4,7 @@ node_modules
 .vscode-test/
 *.vsix
 .venv/
+venv/
 .vs/
 .nox/
 bundled/libs/
