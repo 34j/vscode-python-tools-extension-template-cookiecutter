@@ -1,7 +1,7 @@
 
 # {{cookiecutter.github_repo_display_name}}
 
-[![GitHub](https://img.shields.io/github/license/{{cookiecutter.github_use_name}}/{{cookiecutter.github_repo_name}}?logo=github&logoColor=%23181717)]({{cookiecutter._github_repo_url}})
+[![GitHub](https://img.shields.io/github/license/{{cookiecutter.github_user_name}}/{{cookiecutter.github_repo_name}}?logo=github&logoColor=%23181717)]({{cookiecutter._github_repo_url}})
 [![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/{{cookiecutter.__extension_id}}?logo=visual-studio-code&logoColor=%23007ACC)]({{cookiecutter.__marketplace_url}})
 [![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/{{cookiecutter.__extension_id}})]({{cookiecutter.__marketplace_url}})
 
