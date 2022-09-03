@@ -112,7 +112,7 @@ def _linting_helper(document: workspace.Document) -> list[lsp.Diagnostic]:
     # support linting over stdin to be effective. Read, and update
     # _run_tool_on_document and _run_tool functions as needed for your project.
     result = _run_tool_on_document(document)
-    return _parse_output_using_regex(result.stdout) if result.stdout else []
+    return _parse_output_using_regex(result.stdout) if result.stdout else []#type: ignore
 
 
 # TODO: If your linter outputs in a known format like JSON, then parse
@@ -153,7 +153,7 @@ def _parse_output_using_regex(content: str) -> list[lsp.Diagnostic]:
                     end=position,
                 ),
                 message=data.get("message"),
-                severity=_get_severity(data["code"], data["type"]),
+                severity=_get_severity(data["code"], data["type"]),#type: ignore
                 code=data["code"],
                 source=TOOL_MODULE,
             )
@@ -210,8 +210,8 @@ def _formatting_helper(document: workspace.Document) -> list[lsp.TextEdit] | Non
     # Read, and update_run_tool_on_document and _run_tool functions as needed
     # for your formatter.
     result = _run_tool_on_document(document, use_stdin=True)
-    if result.stdout:
-        new_source = _match_line_endings(document, result.stdout)
+    if result.stdout:#type: ignore
+        new_source = _match_line_endings(document, result.stdout)#type: ignore
         return [
             lsp.TextEdit(
                 range=lsp.Range(
@@ -231,7 +231,7 @@ def _get_line_endings(lines: list[str]) -> str:
             return "\r\n"
         return "\n"
     except Exception:  # pylint: disable=broad-except
-        return None
+        return None#type: ignore
 
 
 def _match_line_endings(document: workspace.Document, text: str) -> str:
@@ -433,7 +433,7 @@ def _run_tool_on_document(
             log_to_output(result.stderr)
 
     log_to_output(f"{document.uri} :\r\n{result.stdout}")
-    return result
+    return result#type: ignore
 
 
 def _run_tool(extra_args: Sequence[str]) -> utils.RunResult:
@@ -512,7 +512,7 @@ def _run_tool(extra_args: Sequence[str]) -> utils.RunResult:
             log_to_output(result.stderr)
 
     log_to_output(f"\r\n{result.stdout}\r\n")
-    return result
+    return result#type: ignore
 
 
 # *****************************************************

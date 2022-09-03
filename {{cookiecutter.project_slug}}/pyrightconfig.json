@@ -1,0 +1,13 @@
+{
+    "exclude": [
+        "**/libs/**",
+        "bundled/tool/__init__.py",
+        "bundled/tool/_debug_server.py",
+        "bundled/tool/jsonrpc.py",
+        "bundled/tool/utils.py",
+        ".nox/**",
+        ".venv/**",
+        "venv/**",
+        "src/test/**",
+    ]
+}

@@ -14,5 +14,16 @@
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
     "python.testing.cwd": "${workspaceFolder}",
-    "python.analysis.extraPaths": ["bundled/libs"]
+    "python.analysis.extraPaths": ["bundled/libs"],
+    "python.linting.ignorePatterns": [
+        "**/libs/**",
+        "bundled/tool/__init__.py",
+        "bundled/tool/_debug_server.py",
+        "bundled/tool/jsonrpc.py",
+        "bundled/tool/utils.py",
+        ".nox/**",
+        ".venv/**",
+        "venv/**",
+        "src/test/**",
+    ]
 }

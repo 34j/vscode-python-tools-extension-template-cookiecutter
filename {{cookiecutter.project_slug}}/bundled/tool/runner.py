@@ -61,7 +61,7 @@ while not EXIT_NOW:
                     argv=msg["argv"],
                     use_stdin=msg["useStdin"],
                     cwd=msg["cwd"],
-                    source=msg["source"] if "source" in msg else None,
+                    source=msg["source"] if "source" in msg else None,#type: ignore
                 )
             except Exception:  # pylint: disable=broad-except
                 result = utils.RunResult("", traceback.format_exc(chain=True))
