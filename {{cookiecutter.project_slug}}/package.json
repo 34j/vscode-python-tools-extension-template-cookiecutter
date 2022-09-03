@@ -2,9 +2,9 @@
     "name": "{{cookiecutter.module_name}}",
     "displayName": "{{cookiecutter.display_name}}",
     "description": "{{cookiecutter.short_explanation}}",
-    "version": "{{cookiecutter.__version}}",
+    "version": "{{cookiecutter.version}}",
     "icon": "image/icon",
-    "preview": {{cookiecutter.__preview}},
+    "preview": {{cookiecutter.preview}},
     "serverInfo": {
         "name": "{{cookiecutter.display_name}}",
         "module": "{{cookiecutter.module_name}}"
