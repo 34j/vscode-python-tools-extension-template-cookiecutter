@@ -17,7 +17,7 @@ You should know to create and work with python virtual environments.
 ```shell
 py -m venv venv
 "venv/scripts/activate"
-pip install -U cookiecutter
+pip install -U cookiecutter jinja2-strcase
 git clone https://github.com/34j/vscode-python-tools-extension-template-cookiecutter.git
 cookiecutter ./vscode-python-tools-extension-template-cookiecutter
 ```
