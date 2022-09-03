@@ -14,13 +14,15 @@
     "__github_repo_url": "https://github.com/{cookiecutter.github_user_name}}/{{cookiecutter.github_repo_name}}",
     "__extension_id": "{{cookiecutter.publisher_name}}.{{cookiecutter.module_name}}",
     "__marketplace_url": "https://marketplace.visualstudio.com/items?itemName={{cookiecutter.__extension_id}}",
-    "preview": ["false","true"],
+    "preview": ["false", "true"],
     "version": "0.0.1",
     "categories": [
         "Formatters",
-        "Programming Languages",
-        "Linters"
+        "Linters",
+        "Programming Languages"
     ],
+    "delete_formatting_codes": false,
+    "delete_linting_codes": true,
     "__year": "{% now 'utc', '%Y' %}",
     "_extensions": [
         "jinja2_time.TimeExtension",
