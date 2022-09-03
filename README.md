@@ -1,14 +1,6 @@
-# Template for VS Code python tools extensions
+# Cookiecutter VSCode Python Tools Extensions
 
-This is a template repository to get you started on building a VS Code extension for your favorite python tool. It could be a linter, formatter, or code analysis, or all of those together. This template will give you the basic building blocks you need to build a VS Code extension for it.
-
-## Programming Languages and Frameworks
-
-The extension template has two parts, the extension part and language server part. The extension part is written in TypeScript, and language server part is written in Python over the `pygls` (Python language server) library.
-
-For the most part you will be working on the python part of the code when using this template. You will be integrating your tool with the extension part using the [Language Server Protocol](https://microsoft.github.io/language-server-protocol). `pygls` currently works on the [version 3.16 of LSP](https://microsoft.github.io/language-server-protocol/specifications/specification-3-16/).
-
-The TypeScript part handles working with VS Code and its UI. The extension template comes with few settings pre configured that can be used by your tool. If you need to add new settings to support your tool, you will have to work with a bit of TypeScript. The extension has examples for few settings that you can follow. You can also look at extensions developed by our team for some of the popular tools as reference.
+Cookiecutter for a VS Code extension for your favorite python tool. Linter, Formatter, or Code Analysis, or all of those together.
 
 ## Requirements
 
@@ -19,6 +11,16 @@ The TypeScript part handles working with VS Code and its UI. The extension templ
 1. Python extension for VS Code
 
 You should know to create and work with python virtual environments.
+
+## Installation
+
+```shell
+py -m venv venv
+"venv/scripts/activate"
+pip install -U cookiecutter
+git clone https://github.com/34j/vscode-python-tools-extension-template-cookiecutter.git
+cookiecutter ./vscode-python-tools-extension-template-cookiecutter
+```
 
 ## Getting Started
 
@@ -66,9 +68,7 @@ References, to other extension created by our team using the template:
 
 ## Building and Run the extension
 
-Run the `Debug Extension and Python` configuration form VS Code. That should build and debug the extension in host window.
-
-Note: if you just want to build you can run the build task in VS Code (`ctrl`+`shift`+`B`)
+Press `F5`.
 
 ## Debugging
 
@@ -98,44 +98,10 @@ make lint
 make publish
 ```
 
-## TODO: The maintainer of this repo has not yet edited this file
+## Programming Languages and Frameworks
 
-**Repo Owner** Make sure you update this. As a repository owner you will need to update this file with specific instructions for your extension.
+The extension template has two parts, the extension part and language server part. The extension part is written in TypeScript, and language server part is written in Python over the `pygls` (Python language server) library.
 
-# {{cookiecutter.github_repo_display_name}}
+For the most part you will be working on the python part of the code when using this template. You will be integrating your tool with the extension part using the [Language Server Protocol](https://microsoft.github.io/language-server-protocol). `pygls` currently works on the [version 3.16 of LSP](https://microsoft.github.io/language-server-protocol/specifications/specification-3-16/).
 
-[![GitHub](https://img.shields.io/github/license/{{cookiecutter.github_use_name}}/{{cookiecutter.github_repo_name}}?logo=github&logoColor=%23181717)]({{cookiecutter.github_repo_url}})
-[![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/{{cookiecutter.extension_id}}?logo=visual-studio-code&logoColor=%23007ACC)]({{cookiecutter.marketplace_url}})
-[![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/{{cookiecutter.extension_id}})]({{cookiecutter.marketplace_url}})
-
-{{cookiecutter.long_explanation}}
-
-[![Install Now](https://img.shields.io/badge/-Install%20Now-107C10?style=for-the-badge&logo=visualstudiocode)]({{cookiecutter.marketplace_url}})
-
-## Features
-
-- Running autoflake for specific file(s) and folder(s)
-- Running autoflake for the workspace
-
-## Requirements
-
-1. VS Code 1.64.0 or greater
-1. Python 3.7 or greater
-1. node >= 14.19.0
-1. npm >= 8.3.0 (`npm` is installed with node, check npm version, use `npm install -g npm@8.3.0` to update)
-1. Python extension for VS Code
-
-## Extension Settings
-
-- `{{cookiecutter.module_name}}.logLevel`
-- `{{cookiecutter.module_name}}.args`
-- `{{cookiecutter.module_name}}.path`
-- `{{cookiecutter.module_name}}.importStrategy`
-- `{{cookiecutter.module_name}}.interpreter`
-- `{{cookiecutter.module_name}}.showNotification`
-
-## Extension Commands
-
-`{{cookiecutter.display_name}}: Restart Server`
-
-<!--## Known Issues-->
+The TypeScript part handles working with VS Code and its UI. The extension template comes with few settings pre configured that can be used by your tool. If you need to add new settings to support your tool, you will have to work with a bit of TypeScript. The extension has examples for few settings that you can follow. You can also look at extensions developed by our team for some of the popular tools as reference.

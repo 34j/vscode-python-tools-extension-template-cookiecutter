@@ -1,9 +1,11 @@
 {
+    
     "module_name": "my-module",
+    "project_slug": "vscode-{{cookiecutter.module_name}}",
+    "github_repo_name": "{{cookiecutter.project_slug}}",
     "display_name": "{{cookiecutter.module_name|to_camel}}",
     "short_explanation": "e.g.Sort Python imports using isort.",
     "long_explanation": "VSCode extension for sorting python imports using isort.",
-    "github_repo_name": "vscode-{{cookiecutter.module_name|to_camel}}",
     "github_repo_display_name": "{{cookiecutter.github_repo_name|to_",
     "github_user_name": "",
     "github_repo_url": "https://github.com/{cookiecutter.github_user_name}}/{{cookiecutter.github_repo_name}}",
