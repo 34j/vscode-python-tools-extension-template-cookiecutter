@@ -1,22 +1,22 @@
 {
-    "name": "<pytool-module>",
-    "displayName": "<pytool-display-name>",
-    "description": "Linting support for python files using `<pytool-module>`.",
-    "version": "2022.0.0-dev",
-    "preview": true,
+    "name": "{{cookiecutter.module_name}}",
+    "displayName": "{{cookiecutter.display_name}}",
+    "description": "{{cookiecutter.short_explanation}}",
+    "version": "{{cookiecutter.version}}",
+    "preview": {{cookiecutter.preview}},
     "serverInfo": {
-        "name": "<pytool-display-name>",
-        "module": "<pytool-module>"
+        "name": "{{cookiecutter.display_name}}",
+        "module": "{{cookiecutter.module_name}}"
     },
-    "publisher": "<my-publisher>",
+    "publisher": "{{cookiecutter.publisher_name}}",
     "license": "MIT",
-    "homepage": "https://github.com/<my-github>/<my-extension-project>",
+    "homepage": "https://github.com/{{cookiecutter.github_user_name}}/<my-extension-project>",
     "repository": {
         "type": "git",
-        "url": "https://github.com/<my-github>/<my-extension-project>.git"
+        "url": "https://github.com/{{cookiecutter.github_user_name}}/<my-extension-project>.git"
     },
     "bugs": {
-        "url": "https://github.com/<my-github>/<my-extension-project>/issues"
+        "url": "https://github.com/{{cookiecutter.github_user_name}}/<my-extension-project>/issues"
     },
     "galleryBanner": {
         "color": "#1e415e",
@@ -24,15 +24,13 @@
     },
     "keywords": [
         "python",
-        "<pytool-module>"
+        "{{cookiecutter.module_name}}"
     ],
     "engines": {
         "vscode": "^1.64.0"
     },
     "categories": [
-        "Programming Languages",
-        "Linters",
-        "Formatters"
+        {{cookiecutter.categories}}
     ],
     "extensionDependencies": [
         "ms-python.python"
@@ -40,7 +38,7 @@
     "activationEvents": [
         "onLanguage:python",
         "workspaceContains:*.py",
-        "onCommand:<pytool-module>.restart"
+        "onCommand:{{cookiecutter.module_name}}.restart"
     ],
     "main": "./dist/extension.js",
     "scripts": {
@@ -54,12 +52,12 @@
         "lint": "eslint src --ext ts",
         "format-check": "prettier --check 'src/**/*.ts' 'build/**/*.yml' '.github/**/*.yml'",
         "test": "node ./out/test/runTest.js",
-        "vsce-package": "vsce package -o <pytool-module>.vsix"
+        "vsce-package": "vsce package -o {{cookiecutter.module_name}}.vsix"
     },
     "contributes": {
         "configuration": {
             "properties": {
-                "<pytool-module>.logLevel": {
+                "{{cookiecutter.module_name}}.logLevel": {
                     "default": "error",
                     "description": "The log level the extension logs at, defaults to 'error'",
                     "enum": [
@@ -72,7 +70,7 @@
                     "scope": "window",
                     "type": "string"
                 },
-                "<pytool-module>.args": {
+                "{{cookiecutter.module_name}}.args": {
                     "default": [],
                     "description": "Arguments passed in. Each argument is a separate item in the array.",
                     "items": {
@@ -81,30 +79,30 @@
                     "scope": "resource",
                     "type": "array"
                 },
-                "<pytool-module>.path": {
+                "{{cookiecutter.module_name}}.path": {
                     "default": [],
-                    "description": "When set to a path to <pytool-module> binary, extension will use that. NOTE: Using this option may slowdown server response time.",
+                    "description": "When set to a path to {{cookiecutter.module_name}} binary, extension will use that. NOTE: Using this option may slowdown server response time.",
                     "scope": "resource",
                     "items": {
                         "type": "string"
                     },
                     "type": "array"
                 },
-                "<pytool-module>.importStrategy": {
+                "{{cookiecutter.module_name}}.importStrategy": {
                     "default": "fromEnvironment",
-                    "description": "Defines where `<pytool-module>` is imported from. This setting may be ignored if `<pytool-module>.path` is set.",
+                    "description": "Defines where `{{cookiecutter.module_name}}` is imported from. This setting may be ignored if `{{cookiecutter.module_name}}.path` is set.",
                     "enum": [
                         "useBundled",
                         "fromEnvironment"
                     ],
                     "enumDescriptions": [
-                        "Always use the bundled version of `<pytool-module>`.",
-                        "Use `<pytool-module>` from environment, fallback to bundled version only if `<pytool-module>` not available in the environment."
+                        "Always use the bundled version of `{{cookiecutter.module_name}}`.",
+                        "Use `{{cookiecutter.module_name}}` from environment, fallback to bundled version only if `{{cookiecutter.module_name}}` not available in the environment."
                     ],
                     "scope": "window",
                     "type": "string"
                 },
-                "<pytool-module>.interpreter": {
+                "{{cookiecutter.module_name}}.interpreter": {
                     "default": [],
                     "description": "When set to a path to python executable, extension will use that to launch the server and any subprocess.",
                     "scope": "window",
@@ -113,7 +111,7 @@
                     },
                     "type": "array"
                 },
-                "<pytool-module>.showNotifications": {
+                "{{cookiecutter.module_name}}.showNotifications": {
                     "default": "off",
                     "description": "Controls when notifications are shown by this extension.",
                     "enum": [
@@ -136,8 +134,8 @@
         "commands": [
             {
                 "title": "Restart Server",
-                "category": "<pytool-display-name>",
-                "command": "<pytool-module>.restart"
+                "category": "{{cookiecutter.display_name}}",
+                "command": "{{cookiecutter.module_name}}.restart"
             }
         ]
     },

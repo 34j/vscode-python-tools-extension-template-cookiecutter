@@ -1,0 +1,10 @@
+<pytool-module>: {{cookiecutter.module_name}}
+<pytool-display-name>: {{cookiecutter.display_name}}
+<my-github>: {{cookiecutter.github_user_name}}
+<my-extension-project>: {{cookiecutter.github_repo_name}}
+<my-publisher>: {{cookiecutter.publisher_name}}
+# LICENSE
+\# TODO: Copyright (c) Microsoft Corporation.: Copyright (c) {{cookiecutter.year}} {{cookiecutter.github_user_name}}
+# requirements.in
+\# TODO: Add your tool here: {{cookiecutter.module_name}}
+2022.0.0-dev: {{cookiecutter.version}}
