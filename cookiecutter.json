@@ -1,11 +1,11 @@
 {
     "module_name": "my-module",
+    "short_explanation": "e.g. Sort Python imports using isort.",
+    "long_explanation": "e.g. VSCode extension for sorting python imports using isort.",
     "project_slug": "vscode-{{cookiecutter.module_name}}",
     "github_repo_name": "{{cookiecutter.project_slug}}",
     "display_name": "{{cookiecutter.module_name}}",
     "github_repo_display_name": "VSCode Extension for {{cookiecutter.module_name}}",
-    "short_explanation": "e.g. Sort Python imports using isort.",
-    "long_explanation": "e.g. VSCode extension for sorting python imports using isort.",
     "github_user_name": "34j",
     "publisher_name": "mikoz",
     "_github_repo_url": "https://github.com/{cookiecutter.github_user_name}}/{{cookiecutter.github_repo_name}}",
