@@ -11,13 +11,13 @@
     },
     "publisher": "{{cookiecutter.publisher_name}}",
     "license": "MIT",
-    "homepage": "https://github.com/{{cookiecutter.github_user_name}}/<my-extension-project>",
+    "homepage": "{{cookiecutter.github_repo_name}}",
     "repository": {
         "type": "git",
-        "url": "https://github.com/{{cookiecutter.github_user_name}}/<my-extension-project>.git"
+        "url": "{{cookiecutter.github_repo_name}}.git"
     },
     "bugs": {
-        "url": "https://github.com/{{cookiecutter.github_user_name}}/<my-extension-project>/issues"
+        "url": "{{cookiecutter.github_repo_name}}/issues"
     },
     "galleryBanner": {
         "color": "#1e415e",
