@@ -1,6 +1,7 @@
 init:
 	py -3.7 -m venv .venv
-	echo -e "\u001b[93mPlease activate venv.\u001b[0m"
+	& ".venv/scripts/activate"
+	echo -e "\u001b[93mPlease activate venv if not activated.\u001b[0m"
 
 setup:
 	pip install -U nox
