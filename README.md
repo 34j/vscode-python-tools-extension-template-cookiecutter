@@ -2,6 +2,8 @@
 
 Cookiecutter for a VS Code extension for your favorite python tool. Linter, Formatter, or Code Analysis, or all of those together.
 
+![Example](Example.png)
+
 ## Requirements
 
 1. VS Code 1.64.0 or greater
