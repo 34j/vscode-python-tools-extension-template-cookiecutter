@@ -4,7 +4,7 @@
 <my-extension-project>: {{cookiecutter.github_repo_name}}
 <my-publisher>: {{cookiecutter.publisher_name}}
 # LICENSE
-\# TODO: Copyright (c) Microsoft Corporation.: Copyright (c) {{cookiecutter.year}} {{cookiecutter.github_user_name}}
+\# TODO: Copyright (c) Microsoft Corporation.: Copyright (c) {{cookiecutter.__year}} {{cookiecutter.github_user_name}}
 # requirements.in
 \# TODO: Add your tool here: {{cookiecutter.module_name}}
 2022.0.0-dev: {{cookiecutter.version}}
