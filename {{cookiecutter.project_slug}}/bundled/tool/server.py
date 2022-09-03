@@ -71,7 +71,7 @@ TOOL_DISPLAY = "{{cookiecutter.display_name}}"
 # all scenarios.
 TOOL_ARGS = []  # default arguments always passed to your tool.
 
-{% if cookiecutter.delete_linting_codes %}
+{% if cookiecutter.delete_linting_codes in ["y", "ye", "yes"] %}
 {% else %}
 # TODO: If your tool is a linter then update this section.
 # Delete "Linting features" section if your tool is NOT a linter.
@@ -178,7 +178,7 @@ def _get_severity(*_codes: list[str]) -> lsp.DiagnosticSeverity:
 # Linting features end here
 # **********************************************************
 {% endif %}
-{% if cookiecutter.delete_formatting_codes %}
+{% if cookiecutter.delete_formatting_codes in ["y", "ye", "yes"] %}
 {% else %}
 # TODO: If your tool is a formatter then update this section.
 # Delete "Formatting features" section if your tool is NOT a

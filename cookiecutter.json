@@ -21,8 +21,8 @@
         "Linters",
         "Programming Languages"
     ],
-    "delete_formatting_codes": false,
-    "delete_linting_codes": true,
+    "delete_formatting_codes": "n",
+    "delete_linting_codes": "y",
     "__year": "{% now 'utc', '%Y' %}",
     "_extensions": [
         "jinja2_time.TimeExtension",
