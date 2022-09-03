@@ -31,7 +31,7 @@
         "vscode": "^1.64.0"
     },
     "categories": [
-        {{cookiecutter.categories}}
+        "{{cookiecutter.categories}}"
     ],
     "extensionDependencies": [
         "ms-python.python"
