@@ -22,6 +22,13 @@ git clone https://github.com/34j/vscode-python-tools-extension-template-cookiecu
 cookiecutter ./vscode-python-tools-extension-template-cookiecutter
 ```
 
+Once you have installed,
+
+```shell
+"venv/scripts/activate"
+cookiecutter ./vscode-python-tools-extension-template-cookiecutter
+```
+
 ## Getting Started
 
 Create `./.venv` and install libraries using `Makefile`.
