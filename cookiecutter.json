@@ -14,7 +14,10 @@
     "__github_repo_url": "https://github.com/{cookiecutter.github_user_name}}/{{cookiecutter.github_repo_name}}",
     "__extension_id": "{{cookiecutter.publisher_name}}.{{cookiecutter.module_name}}",
     "__marketplace_url": "https://marketplace.visualstudio.com/items?itemName={{cookiecutter.__extension_id}}",
-    "preview": ["false", "true"],
+    "preview": [
+        "false",
+        "true"
+    ],
     "version": "0.0.1",
     "categories": [
         "Formatters",

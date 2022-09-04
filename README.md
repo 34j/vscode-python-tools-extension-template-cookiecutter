@@ -40,9 +40,19 @@ make init
 make setup
 ```
 
-## Features of this Template
+## Features
 
-After finishing the getting started part, this template would have added the following.
+- [VSCode extension](https://code.visualstudio.com/api) runs Python scripts.
+- Python interpreter is the result of command `python.interpreterPath` by default, `{{cookiecutter.module_name}}.interpreter` if specified
+- Python runs Python scripts in `bundled/tool` on start or on command `{{cookiecutter.module_name}}.restart` is called.
+- Python scripts uses [pygls](https://pygls.readthedocs.io/) to create a [language server protocol](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/). Since pygls is poorly documented, see [Language Server Protocol Specification](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/) for details.
+- Python scripts has following dependencies.
+  - server.py creates `pygls.Server.LanguageServer`
+  - `pygls.Server.LanguageServer` <- `@LSP_SERVER.feature(lsp.---)``did_open(), did_save(), did_close()`, `formatting()`.
+  - `did_open(), did_save(), did_close()` <- `_linting_helper()`, `formatting()`, <- `_formatting_helper()`
+  - `_linting_helper()`, `_formatting_helper()` <- `_run_tool_on_document()`, (optionally  `_run_tool()`), but if `{{cookiecutter.module_name}}` supports programmatic apis, you can completely delete them, and directly modify `_linting_helper()`, `_formatting_helper()`. Otherwise, you have to modify `argv` everywhere.
+
+As a VSCode extension, by default the following features will be added.
 
 1. A command `{{cookiecutter.display_name}}: Restart Server` (command Id: `{{cookiecutter.module_name}}.restart`).
 2. Following setting:
