@@ -49,17 +49,31 @@ make setup
 - Python scripts has following dependencies.
 
 ```mermaid
+:root {--mermaid-theme:dark;}
 graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+    server.py <|-- pygls.Server.LanguageServer;
+    pygls.Server.LanguageServer <|-- did_open();
+    pygls.Server.LanguageServer <|-- did_save();
+    pygls.Server.LanguageServer <|-- did_close();
+    pygls.Server.LanguageServer <|-- formatting();
+    did_open() <|-- _linting_helper();
+    did_save() <|-- _linting_helper();
+    did_close() <|-- _linting_helper();
+    formatting() <|-- _formatting_helper();
+    _formatting_helper() <|-- _run_tool_on_document();
+    _formatting_helper() <|-- _run_tool() (Optional);
+    _linting_helper() <|-- _run_tool_on_document();
+    _linting_helper() <|-- _run_tool() (Optional);
 ```
 
+If `{{cookiecutter.module_name}}` supports programmatic apis, you can completely delete `_run_tool_on_document()`, `_run_tool()` and other related settings, and directly modify `_linting_helper()`, `_formatting_helper()`. Otherwise, you have to modify `argv` everywhere.
+
+<!--
   - server.py creates `pygls.Server.LanguageServer`
   - `pygls.Server.LanguageServer` <- `@LSP_SERVER.feature(lsp.---)``did_open(), did_save(), did_close()`, `formatting()`.
   - `did_open(), did_save(), did_close()` <- `_linting_helper()`, `formatting()`, <- `_formatting_helper()`
-  - `_linting_helper()`, `_formatting_helper()` <- `_run_tool_on_document()`, (optionally  `_run_tool()`), but if `{{cookiecutter.module_name}}` supports programmatic apis, you can completely delete them, and directly modify `_linting_helper()`, `_formatting_helper()`. Otherwise, you have to modify `argv` everywhere.
+  - `_linting_helper()`, `_formatting_helper()` <- `_run_tool_on_document()`, (optionally  `_run_tool()`), but 
+-->
 
 As a VSCode extension, by default the following features will be added.
 
