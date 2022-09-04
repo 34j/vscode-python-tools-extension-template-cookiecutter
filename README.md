@@ -49,21 +49,20 @@ make setup
 - Python scripts has following dependencies.
 
 ```mermaid
-:root {--mermaid-theme:dark;}
 graph TD;
-    server.py <|-- pygls.Server.LanguageServer;
-    pygls.Server.LanguageServer <|-- did_open();
-    pygls.Server.LanguageServer <|-- did_save();
-    pygls.Server.LanguageServer <|-- did_close();
-    pygls.Server.LanguageServer <|-- formatting();
-    did_open() <|-- _linting_helper();
-    did_save() <|-- _linting_helper();
-    did_close() <|-- _linting_helper();
-    formatting() <|-- _formatting_helper();
-    _formatting_helper() <|-- _run_tool_on_document();
-    _formatting_helper() <|-- _run_tool() (Optional);
-    _linting_helper() <|-- _run_tool_on_document();
-    _linting_helper() <|-- _run_tool() (Optional);
+    pygls.Server.LanguageServer --> server.py;
+    did_open() --> pygls.Server.LanguageServer;
+    did_save() --> pygls.Server.LanguageServer;
+    did_close() --> pygls.Server.LanguageServer;
+    formatting() --> pygls.Server.LanguageServer;
+    _linting_helper() --> did_open();
+    _linting_helper() --> did_save();
+    _linting_helper() --> did_close();
+    _formatting_helper() --> formatting();
+    _run_tool_on_document() --> _formatting_helper();
+    _run_tool() (Optional) --> _formatting_helper();
+    _run_tool_on_document() --> _linting_helper();
+    _run_tool() (Optional) --> _linting_helper();
 ```
 
 If `{{cookiecutter.module_name}}` supports programmatic apis, you can completely delete `_run_tool_on_document()`, `_run_tool()` and other related settings, and directly modify `_linting_helper()`, `_formatting_helper()`. Otherwise, you have to modify `argv` everywhere.
