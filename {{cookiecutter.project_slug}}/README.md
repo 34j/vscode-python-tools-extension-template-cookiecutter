@@ -24,12 +24,12 @@
 
 ## Extension Settings
 
-- `{{cookiecutter.module_name}}.logLevel`
-- `{{cookiecutter.module_name}}.args`
-- `{{cookiecutter.module_name}}.path`
-- `{{cookiecutter.module_name}}.importStrategy`
-- `{{cookiecutter.module_name}}.interpreter`
-- `{{cookiecutter.module_name}}.showNotification`
+- `{{cookiecutter.module_name}}.logLevel`: The log level the extension logs at, defaults to 'error'.
+- `{{cookiecutter.module_name}}.args`: Additional arguments passed in. Each argument is a separate item in the array.
+- `{{cookiecutter.module_name}}.path`: When set to a path to {{cookiecutter.module_name}} binary, extension will use that. NOTE: Using this option may slowdown server response time.
+- `{{cookiecutter.module_name}}.importStrategy`: Defines where `{{cookiecutter.module_name}}` is imported from. This setting may be ignored if `{{cookiecutter.module_name}}.path` is set.
+- `{{cookiecutter.module_name}}.interpreter`: When set to a path to python executable, extension will use that to launch the server and any subprocess.
+- `{{cookiecutter.module_name}}.showNotification`: Controls when notifications are shown by this extension.
 
 ## Extension Commands
 

@@ -60,7 +60,7 @@
             "properties": {
                 "{{cookiecutter.module_name}}.logLevel": {
                     "default": "error",
-                    "description": "The log level the extension logs at, defaults to 'error'",
+                    "description": "The log level the extension logs at, defaults to 'error'.",
                     "enum": [
                         "debug",
                         "error",
@@ -73,7 +73,7 @@
                 },
                 "{{cookiecutter.module_name}}.args": {
                     "default": [],
-                    "description": "Arguments passed in. Each argument is a separate item in the array.",
+                    "description": "Additional arguments passed in. Each argument is a separate item in the array.",
                     "items": {
                         "type": "string"
                     },
@@ -90,7 +90,7 @@
                     "type": "array"
                 },
                 "{{cookiecutter.module_name}}.importStrategy": {
-                    "default": "fromEnvironment",
+                    "default": "useBundled",
                     "description": "Defines where `{{cookiecutter.module_name}}` is imported from. This setting may be ignored if `{{cookiecutter.module_name}}.path` is set.",
                     "enum": [
                         "useBundled",
