@@ -35,6 +35,6 @@
 
 ## Extension Commands
 
-`{{cookiecutter.display_name}}: Restart Server`
+`{{cookiecutter.display_name}}: Restart Server`: Restart Server.
 
 <!--## Known Issues-->
