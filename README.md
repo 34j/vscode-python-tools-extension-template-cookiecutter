@@ -37,7 +37,6 @@ Create `./.venv` and install libraries using `Makefile`.
 
 ```shell
 make init
-make setup
 ```
 
 ## Features

@@ -1,12 +1,6 @@
 init:
-	py -3.7 -m venv .venv
-	& ".venv/scripts/activate"
+	init.bat
 	echo -e "\u001b[93mPlease activate venv if not activated.\u001b[0m"
-
-setup:
-	pip install -U nox
-	nox --session setup
-	npm install
 
 setup-test:
 	pip install -r src/test/python_tests/requirements.txt
