@@ -50,20 +50,28 @@ make setup
 
 ```mermaid
 graph BT;
-%%{init:{'theme':'dark','themeVariables':{'primaryColor':'#000000','primaryTextColor':'#FFFFFF','primaryBorderColor':'#FFFFFF','secondaryColor':'#000000','lineColor':'#FFFFFF','noteTextColor':'#FFFFFF','noteBkgColor':'000000','textColor':'#FFFFFF'}}}%%
-    pygls.Server.LanguageServer --> server.py;
+%%{init:{'theme':'dark', "flowchart" : { "curve" : "linear" }, 'themeVariables':{'primaryColor':'#000000','primaryTextColor':'#FFFFFF','primaryBorderColor':'#FFFFFF','secondaryColor':'#000000','lineColor':'#FFFFFF','noteTextColor':'#FFFFFF','noteBkgColor':'000000','textColor':'#FFFFFF'}}}%%
+    pygls.Server.LanguageServer --> server.__main__;
     did_open --> pygls.Server.LanguageServer;
     did_save --> pygls.Server.LanguageServer;
     did_close --> pygls.Server.LanguageServer;
     formatting --> pygls.Server.LanguageServer;
-    _linting_helper --> did_open;
-    _linting_helper --> did_save;
-    _linting_helper --> did_close;
-    _formatting_helper --> formatting;
+    subgraph Linting
+        _linting_helper --> did_open;
+        _linting_helper --> did_save;
+        _linting_helper --> did_close;
+    end
+    subgraph Formatting  
+        _formatting_helper --> formatting;
+    end
     _run_tool_on_document --> _formatting_helper;
     _run_tool -->|Optional| _formatting_helper;
     _run_tool_on_document --> _linting_helper;
     _run_tool -->|Optional| _linting_helper;
+    subgraph RunningModule
+        _run_tool_on_document
+        _run_tool
+    end
 ```
 
 If `{{cookiecutter.module_name}}` supports programmatic apis, you can completely delete `_run_tool_on_document()`, `_run_tool()` and other related settings, and directly modify `_linting_helper()`, `_formatting_helper()`. Otherwise, you have to modify `argv` everywhere.
