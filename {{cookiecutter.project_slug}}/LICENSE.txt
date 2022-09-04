@@ -2,7 +2,7 @@ MIT License
 
 Copyright (c) 2022 34j and contirbutors
 Copyright (c) Microsoft Corporation.
-{% if cookiecutter.github_user_name in ["34j", "microsoft"] %}
+{% if cookiecutter.github_user_name not in ["34j", "microsoft"] %}
 Copyright (c) {{cookiecutter.__year}} {{cookiecutter.github_user_name}}
 {% endif %}
 
