@@ -47,6 +47,15 @@ make setup
 - Python runs Python scripts in `bundled/tool` on start or on command `{{cookiecutter.module_name}}.restart` is called.
 - Python scripts uses [pygls](https://pygls.readthedocs.io/) to create a [language server protocol](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/). Since pygls is poorly documented, see [Language Server Protocol Specification](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/) for details.
 - Python scripts has following dependencies.
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
   - server.py creates `pygls.Server.LanguageServer`
   - `pygls.Server.LanguageServer` <- `@LSP_SERVER.feature(lsp.---)``did_open(), did_save(), did_close()`, `formatting()`.
   - `did_open(), did_save(), did_close()` <- `_linting_helper()`, `formatting()`, <- `_formatting_helper()`
