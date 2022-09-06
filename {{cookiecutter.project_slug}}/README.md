@@ -1,4 +1,3 @@
-
 # {{cookiecutter.github_repo_display_name}}
 
 [![GitHub](https://img.shields.io/github/license/{{cookiecutter.github_user_name}}/{{cookiecutter.github_repo_name}}?logo=github&logoColor=%23181717)]({{cookiecutter.__github_repo_url}})
@@ -8,11 +7,6 @@
 {{cookiecutter.long_explanation}}
 
 [![Install Now](https://img.shields.io/badge/-Install%20Now-107C10?style=for-the-badge&logo=visualstudiocode)]({{cookiecutter.__marketplace_url}})
-
-## Features
-
-- Running autoflake for specific file(s) and folder(s)
-- Running autoflake for the workspace
 
 ## Requirements
 

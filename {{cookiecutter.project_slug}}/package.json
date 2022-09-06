@@ -1,13 +1,13 @@
 {
-    "name": "{{cookiecutter.module_name}}",
+    "name": "{{cookiecutter.ext_name}}",
     "displayName": "{{cookiecutter.display_name}}",
     "description": "{{cookiecutter.short_explanation}}",
     "version": "{{cookiecutter.version}}",
-    "icon": "image/icon",
+    "icon": "image/icon.png",
     "preview": {{cookiecutter.preview}},
     "serverInfo": {
         "name": "{{cookiecutter.display_name}}",
-        "module": "{{cookiecutter.module_name}}"
+        "module": "{{cookiecutter.ext_name}}"
     },
     "publisher": "{{cookiecutter.publisher_name}}",
     "license": "MIT",
@@ -25,7 +25,7 @@
     },
     "keywords": [
         "python",
-        "{{cookiecutter.module_name}}"
+        "{{cookiecutter.ext_name}}"
     ],
     "engines": {
         "vscode": "^1.64.0"
@@ -39,7 +39,7 @@
     "activationEvents": [
         "onLanguage:python",
         "workspaceContains:*.py",
-        "onCommand:{{cookiecutter.module_name}}.restart"
+        "onCommand:{{cookiecutter.ext_name}}.restart"
     ],
     "main": "./dist/extension.js",
     "scripts": {
@@ -53,12 +53,12 @@
         "lint": "eslint src --ext ts",
         "format-check": "prettier --check 'src/**/*.ts' 'build/**/*.yml' '.github/**/*.yml'",
         "test": "node ./out/test/runTest.js",
-        "vsce-package": "vsce package -o {{cookiecutter.module_name}}.vsix"
+        "vsce-package": "vsce package -o {{cookiecutter.ext_name}}.vsix"
     },
     "contributes": {
         "configuration": {
             "properties": {
-                "{{cookiecutter.module_name}}.logLevel": {
+                "{{cookiecutter.ext_name}}.logLevel": {
                     "default": "error",
                     "description": "The log level the extension logs at, defaults to 'error'.",
                     "enum": [
@@ -71,7 +71,7 @@
                     "scope": "window",
                     "type": "string"
                 },
-                "{{cookiecutter.module_name}}.args": {
+                "{{cookiecutter.ext_name}}.args": {
                     "default": [],
                     "description": "Additional arguments passed in. Each argument is a separate item in the array.",
                     "items": {
@@ -80,7 +80,7 @@
                     "scope": "resource",
                     "type": "array"
                 },
-                "{{cookiecutter.module_name}}.path": {
+                "{{cookiecutter.ext_name}}.path": {
                     "default": [],
                     "description": "When set to a path to {{cookiecutter.module_name}} binary, extension will use that. NOTE: Using this option may slowdown server response time.",
                     "scope": "resource",
@@ -89,21 +89,21 @@
                     },
                     "type": "array"
                 },
-                "{{cookiecutter.module_name}}.importStrategy": {
+                "{{cookiecutter.ext_name}}.importStrategy": {
                     "default": "useBundled",
-                    "description": "Defines where `{{cookiecutter.module_name}}` is imported from. This setting may be ignored if `{{cookiecutter.module_name}}.path` is set.",
+                    "description": "Defines where `{{cookiecutter.module_name}}` is imported from. This setting may be ignored if `{{cookiecutter.ext_name}}.path` is set.",
                     "enum": [
                         "useBundled",
                         "fromEnvironment"
                     ],
                     "enumDescriptions": [
                         "Always use the bundled version of `{{cookiecutter.module_name}}`.",
-                        "Use `{{cookiecutter.module_name}}` from environment, fallback to bundled version only if `{{cookiecutter.module_name}}` not available in the environment."
+                        "Use `{{cookiecutter.ext_name}}` from environment, fallback to bundled version only if `{{cookiecutter.ext_name}}` not available in the environment."
                     ],
                     "scope": "window",
                     "type": "string"
                 },
-                "{{cookiecutter.module_name}}.interpreter": {
+                "{{cookiecutter.ext_name}}.interpreter": {
                     "default": [],
                     "description": "When set to a path to python executable, extension will use that to launch the server and any subprocess.",
                     "scope": "window",
@@ -112,7 +112,7 @@
                     },
                     "type": "array"
                 },
-                "{{cookiecutter.module_name}}.showNotifications": {
+                "{{cookiecutter.ext_name}}.showNotifications": {
                     "default": "off",
                     "description": "Controls when notifications are shown by this extension.",
                     "enum": [
@@ -136,7 +136,7 @@
             {
                 "title": "Restart Server",
                 "category": "{{cookiecutter.display_name}}",
-                "command": "{{cookiecutter.module_name}}.restart"
+                "command": "{{cookiecutter.ext_name}}.restart"
             }
         ]
     },
