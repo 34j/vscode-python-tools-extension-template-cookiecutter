@@ -8,6 +8,8 @@
 
 [![Install Now](https://img.shields.io/badge/-Install%20Now-107C10?style=for-the-badge&logo=visualstudiocode)]({{cookiecutter.__marketplace_url}})
 
+Consider using [Composite Formatter](https://marketplace.visualstudio.com/items?itemName=mikoz.composite-formatter) to run multiple formatters at once as a single formatter.
+
 ## Requirements
 
 1. VS Code 1.64.0 or greater
