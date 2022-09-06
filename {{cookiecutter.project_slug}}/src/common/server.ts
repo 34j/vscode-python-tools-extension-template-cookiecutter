@@ -67,8 +67,17 @@ export async function createServer(
     initializationOptions: IInitOptions,
     workspaceSetting: ISettings,
 ): Promise<LanguageClient> {
+    const command = interpreter[0];
     const cwd = getProjectRoot().uri.fsPath;
+
+    // Set debugger path needed for debugging python code.
     const newEnv = { ...process.env };
+    const debuggerPath = await getDebuggerPath();
+    if (newEnv.USE_DEBUGPY && debuggerPath) {
+        newEnv.DEBUGPY_PATH = debuggerPath;
+    } else {
+        newEnv.USE_DEBUGPY = 'False';
+    }
 
     // Set import strategy
     newEnv.LS_IMPORT_STRATEGY = workspaceSetting.importStrategy;
@@ -76,9 +85,16 @@ export async function createServer(
     // Set notification type
     newEnv.LS_SHOW_NOTIFICATION = workspaceSetting.showNotifications;
 
+    const args =
+        newEnv.USE_DEBUGPY === 'False'
+            ? interpreter.slice(1).concat([SERVER_SCRIPT_PATH])
+            : interpreter.slice(1).concat([DEBUG_SERVER_SCRIPT_PATH]);
+    traceInfo(`Server run command: ${[command, ...args].join(' ')}`);
+
     const serverOptions: ServerOptions = {
-        run: await getRunServerOptions(interpreter, cwd, { ...newEnv }),
-        debug: await getDebugServerOptions(interpreter, cwd, { ...newEnv }),
+        command,
+        args,
+        options: { cwd, env: newEnv },
     };
 
     // Options to control the language client
@@ -97,7 +113,6 @@ export async function createServer(
         revealOutputChannelOn: RevealOutputChannelOn.Never,
         initializationOptions,
     };
-
     return new LanguageClient(serverId, serverName, serverOptions, clientOptions);
 }
 
