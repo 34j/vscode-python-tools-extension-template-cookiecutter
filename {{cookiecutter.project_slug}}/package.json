@@ -97,7 +97,7 @@
                         "fromEnvironment"
                     ],
                     "enumDescriptions": [
-                        "Always use the bundled version of `{{cookiecutter.module_name}}`.",
+                        "Always use the bundled version of `{{cookiecutter.ext_name}}`.",
                         "Use `{{cookiecutter.ext_name}}` from environment, fallback to bundled version only if `{{cookiecutter.ext_name}}` not available in the environment."
                     ],
                     "scope": "window",

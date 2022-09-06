@@ -42,8 +42,8 @@ make init
 ## Features
 
 - [VSCode extension](https://code.visualstudio.com/api) runs Python scripts.
-- Python interpreter is the result of command `python.interpreterPath` by default, `{{cookiecutter.module_name}}.interpreter` if specified
-- Python runs Python scripts in `bundled/tool` on start or on command `{{cookiecutter.module_name}}.restart` is called.
+- Python interpreter is the result of command `python.interpreterPath` by default, `{{cookiecutter.ext_name}}.interpreter` if specified
+- Python runs Python scripts in `bundled/tool` on start or on command `{{cookiecutter.ext_name}}.restart` is called.
 - Python scripts uses [pygls](https://pygls.readthedocs.io/) to create a [language server protocol](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/). Since pygls is poorly documented, see [Language Server Protocol Specification](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/) for details.
 - Python scripts has following dependencies.
 
@@ -84,22 +84,22 @@ If `{{cookiecutter.module_name}}` supports programmatic apis, you can completely
 
 As a VSCode extension, by default the following features will be added.
 
-- A command `{{cookiecutter.display_name}}: Restart Server` (command Id: `{{cookiecutter.module_name}}.restart`).
+- A command `{{cookiecutter.display_name}}: Restart Server` (command Id: `{{cookiecutter.ext_name}}.restart`).
 - Following setting:
 
 |Name|Description|
 |----|-----------|
-|`{{cookiecutter.module_name}}.logLevel`| The log level the extension logs at, defaults to 'error'.|
-| `{{cookiecutter.module_name}}.args`| Additional arguments passed in. Each argument is a separate item in the array.|
-| `{{cookiecutter.module_name}}.path`| When set to a path to {{cookiecutter.module_name}} binary, extension will use that. NOTE: Using this option may slowdown server response time.|
-| `{{cookiecutter.module_name}}.importStrategy`| Defines where `{{cookiecutter.module_name}}` is imported from. This setting may be ignored if `{{cookiecutter.module_name}}.path` is set.|
-| `{{cookiecutter.module_name}}.interpreter`| When set to a path to python executable, extension will use that to launch the server and any subprocess.|
-| `{{cookiecutter.module_name}}.showNotification`| Controls when notifications are shown by this extension.|
+|`{{cookiecutter.ext_name}}.logLevel`| The log level the extension logs at, defaults to 'error'.|
+| `{{cookiecutter.ext_name}}.args`| Additional arguments passed in. Each argument is a separate item in the array.|
+| `{{cookiecutter.ext_name}}.path`| When set to a path to {{cookiecutter.module_name}} binary, extension will use that. NOTE: Using this option may slowdown server response time.|
+| `{{cookiecutter.ext_name}}.importStrategy`| Defines where `{{cookiecutter.module_name}}` is imported from. This setting may be ignored if `{{cookiecutter.ext_name}}.path` is set.|
+| `{{cookiecutter.ext_name}}.interpreter`| When set to a path to python executable, extension will use that to launch the server and any subprocess.|
+| `{{cookiecutter.ext_name}}.showNotification`| Controls when notifications are shown by this extension.|
 
 - Following triggers for extension activation:
   - On Language `python`.
   - On File with `.py` extension found in the opened workspace.
-  - On Command `{{cookiecutter.module_name}}.restart`.
+  - On Command `{{cookiecutter.ext_name}}.restart`.
 - Output Channel for logging `Output` > `{{cookiecutter.display_name}}`
 
 ## Adding features from your tool

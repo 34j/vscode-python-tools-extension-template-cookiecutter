@@ -1,4 +1,4 @@
-<pytool-module>: {{cookiecutter.module_name}}
+<pytool-module>: {{cookiecutter.module_name}} or {{cookiecutter.ext_name}}
 <pytool-display-name>: {{cookiecutter.display_name}}
 <my-github>: {{cookiecutter.github_user_name}}
 <my-extension-project>: {{cookiecutter.github_repo_name}}
