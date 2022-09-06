@@ -362,6 +362,7 @@ def _run_tool_on_document(
 
     argv += TOOL_ARGS + settings["args"] + extra_args
 
+    # NOTE: there is no configuration in contribution points whether to use stdin.
     if use_stdin:
         # TODO: update these to pass the appropriate arguments to provide document contents
         # to tool via stdin.
